@@ -5,6 +5,7 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication, QMessageBox
 from front.modulo_libros import configurar_pagina_libros
 from front.modulo_prestamos import configurar_pagina_prestamos
+from front.modulo_usuarios import configurar_pagina_usuarios
 from src.auth import iniciar_sesion
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -60,9 +61,14 @@ def abrir_ventana_principal():
     # Configurar visibilidad de botones según el rol
     configurar_menu_por_rol(ventana_principal, rol)
 
-    # Inicializar módulo de Libros (Fase 2) y Préstamos (Fase 3)
+    # Inicializar módulos: Libros, Préstamos y Usuarios
     refrescar_libros = configurar_pagina_libros(ventana_principal, sesion_actual, cargar_ui)
-    configurar_pagina_prestamos(ventana_principal, sesion_actual, refrescar_libros)
+    refrescar_lectores = configurar_pagina_prestamos(
+        ventana_principal, sesion_actual, refrescar_libros
+    )
+    configurar_pagina_usuarios(
+        ventana_principal, sesion_actual, cargar_ui, refrescar_lectores
+    )
 
     # Navegación del menú lateral con QStackedWidget
     ventana_principal.btnLibros.clicked.connect(

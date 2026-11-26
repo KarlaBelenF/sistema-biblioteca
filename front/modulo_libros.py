@@ -48,12 +48,7 @@ def configurar_pagina_libros(ventana, sesion: dict, cargar_ui_fn):
     ventana.btnNuevoLibro.setVisible(es_personal)
     ventana.btnEditarLibro.setVisible(es_personal)
     ventana.btnEliminarLibro.setVisible(es_admin)
-
-    if not es_personal:
-        ventana.txtCodigoBarras.setPlaceholderText(
-            "Escanee o escriba un código de barras y presione Enter para buscar el libro..."
-        )
-        ventana.btnEscanearLibro.setText("Buscar código")
+    ventana.barraEscaner.setVisible(es_personal)
 
     def mostrar_sinopsis(libro: dict):
         dialogo = cargar_ui_fn(RUTA_SINOPSIS_UI)

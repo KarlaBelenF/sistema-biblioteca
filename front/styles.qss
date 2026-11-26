@@ -34,6 +34,7 @@ QFrame#tarjetaUsuarios QLabel,
 QFrame#tarjetaReportes QLabel,
 QFrame#panelContenido QLabel,
 QFrame#tarjetaFormulario QLabel,
+QFrame#tarjetaFormulario QCheckBox,
 QFrame#barraEscaner QLabel,
 QFrame#barraEscanerPrestamo QLabel,
 QFrame#barraEscanerDevolucion QLabel {
@@ -132,6 +133,7 @@ QPushButton:disabled {
 
 /* Botones secundarios y de eliminar */
 QPushButton#btnLimpiarBusqueda,
+QPushButton#btnLimpiarBusquedaUsuario,
 QPushButton#btnCancelar,
 QPushButton#btnLimpiarCarrito,
 QPushButton#btnRecargarLectores {
@@ -141,6 +143,7 @@ QPushButton#btnRecargarLectores {
 }
 
 QPushButton#btnLimpiarBusqueda:hover,
+QPushButton#btnLimpiarBusquedaUsuario:hover,
 QPushButton#btnCancelar:hover,
 QPushButton#btnLimpiarCarrito:hover,
 QPushButton#btnRecargarLectores:hover {

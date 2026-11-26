@@ -420,3 +420,5 @@ def configurar_pagina_prestamos(ventana, sesion: dict, al_actualizar_stock_fn=No
     else:
         ventana.tabPrestamos.setCurrentIndex(2)
         cargar_mis_prestamos()
+
+    return cargar_lectores
