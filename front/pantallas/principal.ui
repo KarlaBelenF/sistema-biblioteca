@@ -1269,6 +1269,9 @@
        <item>
         <widget class="QFrame" name="tarjetaReportes">
          <layout class="QVBoxLayout" name="layoutTarjetaReportes">
+          <property name="spacing">
+           <number>14</number>
+          </property>
           <property name="leftMargin">
            <number>24</number>
           </property>
@@ -1284,22 +1287,341 @@
           <item>
            <widget class="QLabel" name="lblTituloSeccion">
             <property name="text">
-             <string>Reportes</string>
+             <string>Reportes y Auditoría</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="spacerReportes">
-            <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+           <widget class="QTabWidget" name="tabReportes">
+            <property name="currentIndex">
+             <number>0</number>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
+            <widget class="QWidget" name="tabLibrosSolicitados">
+             <attribute name="title">
+              <string>Libros más solicitados</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="layoutTabLibrosSolicitados">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <property name="leftMargin">
+               <number>16</number>
+              </property>
+              <property name="topMargin">
+               <number>16</number>
+              </property>
+              <property name="rightMargin">
+               <number>16</number>
+              </property>
+              <property name="bottomMargin">
+               <number>16</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="layoutCabeceraSolicitados">
+                <item>
+                 <widget class="QLabel" name="lblEstadoSolicitados">
+                  <property name="text">
+                   <string>Ranking de libros con mayor cantidad de ejemplares prestados</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="spacerSolicitados">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnActualizarSolicitados">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string>Actualizar</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tablaMasSolicitados">
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                </property>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>Código</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Título</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Autor</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Estante</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Fila</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Total Ejemplares Prestados</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tabPrestamosRetrasados">
+             <attribute name="title">
+              <string>Préstamos con retraso</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="layoutTabPrestamosRetrasados">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <property name="leftMargin">
+               <number>16</number>
+              </property>
+              <property name="topMargin">
+               <number>16</number>
+              </property>
+              <property name="rightMargin">
+               <number>16</number>
+              </property>
+              <property name="bottomMargin">
+               <number>16</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="layoutCabeceraRetrasados">
+                <item>
+                 <widget class="QLabel" name="lblEstadoRetrasados">
+                  <property name="text">
+                   <string>Préstamos activos vencidos con teléfono descifrado y días de retraso</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="spacerRetrasados">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnActualizarRetrasados">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string>Actualizar</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tablaPrestamosRetrasados">
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                </property>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>Folio</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Lector</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Teléfono</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Libro</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Cantidad</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Fecha Límite</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Días de Retraso</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tabAuditoria">
+             <attribute name="title">
+              <string>Bitácora de Auditoría</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="layoutTabAuditoria">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <property name="leftMargin">
+               <number>16</number>
+              </property>
+              <property name="topMargin">
+               <number>16</number>
+              </property>
+              <property name="rightMargin">
+               <number>16</number>
+              </property>
+              <property name="bottomMargin">
+               <number>16</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="layoutCabeceraAuditoria">
+                <item>
+                 <widget class="QLabel" name="lblEstadoAuditoria">
+                  <property name="text">
+                   <string>Historial de cambios registrados por los triggers de auditoría</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="spacerAuditoria">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnActualizarAuditoria">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string>Actualizar</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tablaAuditoria">
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                </property>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>ID</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Tabla Afectada</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Operación</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Fecha y Hora</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Responsable</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Información Anterior</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Información Nueva</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
           </item>
          </layout>
         </widget>

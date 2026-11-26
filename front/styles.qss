@@ -209,13 +209,19 @@ QTabWidget::pane {
 
 QWidget#tabNuevoPrestamo,
 QWidget#tabDevoluciones,
-QWidget#tabMisPrestamos {
+QWidget#tabMisPrestamos,
+QWidget#tabLibrosSolicitados,
+QWidget#tabPrestamosRetrasados,
+QWidget#tabAuditoria {
     background-color: #FFFFFF;
 }
 
 QWidget#tabNuevoPrestamo QLabel,
 QWidget#tabDevoluciones QLabel,
-QWidget#tabMisPrestamos QLabel {
+QWidget#tabMisPrestamos QLabel,
+QWidget#tabLibrosSolicitados QLabel,
+QWidget#tabPrestamosRetrasados QLabel,
+QWidget#tabAuditoria QLabel {
     background-color: transparent;
 }
 

@@ -5,6 +5,7 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication, QMessageBox
 from front.modulo_libros import configurar_pagina_libros
 from front.modulo_prestamos import configurar_pagina_prestamos
+from front.modulo_reportes import configurar_pagina_reportes
 from front.modulo_usuarios import configurar_pagina_usuarios
 from src.auth import iniciar_sesion
 
@@ -61,7 +62,7 @@ def abrir_ventana_principal():
     # Configurar visibilidad de botones según el rol
     configurar_menu_por_rol(ventana_principal, rol)
 
-    # Inicializar módulos: Libros, Préstamos y Usuarios
+    # Inicializar módulos: Libros, Préstamos, Usuarios y Reportes
     refrescar_libros = configurar_pagina_libros(ventana_principal, sesion_actual, cargar_ui)
     refrescar_lectores = configurar_pagina_prestamos(
         ventana_principal, sesion_actual, refrescar_libros
@@ -69,6 +70,12 @@ def abrir_ventana_principal():
     configurar_pagina_usuarios(
         ventana_principal, sesion_actual, cargar_ui, refrescar_lectores
     )
+    refrescar_reportes = configurar_pagina_reportes(ventana_principal, sesion_actual)
+
+    def ir_a_reportes():
+        ventana_principal.stackedPaginas.setCurrentIndex(3)
+        if refrescar_reportes:
+            refrescar_reportes()
 
     # Navegación del menú lateral con QStackedWidget
     ventana_principal.btnLibros.clicked.connect(
@@ -80,9 +87,7 @@ def abrir_ventana_principal():
     ventana_principal.btnUsuarios.clicked.connect(
         lambda: ventana_principal.stackedPaginas.setCurrentIndex(2)
     )
-    ventana_principal.btnReportes.clicked.connect(
-        lambda: ventana_principal.stackedPaginas.setCurrentIndex(3)
-    )
+    ventana_principal.btnReportes.clicked.connect(ir_a_reportes)
 
     # Iniciar siempre en la página de Libros
     ventana_principal.btnLibros.setChecked(True)
