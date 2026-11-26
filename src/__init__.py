@@ -1,0 +1,2 @@
+# aqui no se pone nada porque inicializa el paquete src, y se importa en main.py
+# esto significa que se puede importar cualquier modulo de src desde main.py, por ejemplo: from src.auth import iniciar_sesion
