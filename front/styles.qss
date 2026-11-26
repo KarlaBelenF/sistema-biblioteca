@@ -1,0 +1,250 @@
+/* Estilo General - Sistema de Gestión de Biblioteca */
+QWidget {
+    background-color: #F5F1E8;
+    color: #2C2A29;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Tarjetas blancas */
+QFrame#tarjetaLogin,
+QFrame#tarjetaLibros,
+QFrame#tarjetaPrestamos,
+QFrame#tarjetaUsuarios,
+QFrame#tarjetaReportes,
+QFrame#panelContenido,
+QFrame#tarjetaFormulario {
+    background-color: #FFFFFF;
+    border: 1px solid #E2DACB;
+    border-radius: 10px;
+}
+
+QFrame#barraEscaner {
+    background-color: #F5F1E8;
+    border: 1px solid #E2DACB;
+    border-radius: 8px;
+}
+
+QFrame#tarjetaLogin QLabel,
+QFrame#tarjetaLibros QLabel,
+QFrame#tarjetaPrestamos QLabel,
+QFrame#tarjetaUsuarios QLabel,
+QFrame#tarjetaReportes QLabel,
+QFrame#panelContenido QLabel,
+QFrame#tarjetaFormulario QLabel,
+QFrame#barraEscaner QLabel {
+    background-color: transparent;
+    color: #2C2A29;
+}
+
+/* Títulos y subtítulos */
+QLabel#lblTituloLogin,
+QLabel#lblTituloSeccion,
+QLabel#lblTituloFormulario {
+    color: #1E4D3B;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+QLabel#lblTituloFormulario {
+    font-size: 18px;
+}
+
+QLabel#lblSubtituloLogin,
+QLabel#lblEstadoLibros,
+QLabel#lblLibroSinopsis {
+    color: #6E6A64;
+    font-size: 13px;
+    background-color: transparent;
+}
+
+QLabel#lblLibroSinopsis {
+    font-weight: 600;
+}
+
+QLabel#lblEscaner {
+    color: #1E4D3B;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+QLabel#lblCampo {
+    font-weight: 600;
+    color: #2C2A29;
+    background-color: transparent;
+}
+
+/* Campos de texto */
+QLineEdit,
+QComboBox,
+QSpinBox,
+QDateTimeEdit,
+QTextEdit,
+QPlainTextEdit {
+    background-color: #FFFFFF;
+    color: #2C2A29;
+    border: 1px solid #E2DACB;
+    border-radius: 6px;
+    padding: 7px 10px;
+}
+
+QLineEdit:focus,
+QComboBox:focus,
+QSpinBox:focus,
+QDateTimeEdit:focus,
+QTextEdit:focus,
+QPlainTextEdit:focus {
+    border: 2px solid #1E4D3B;
+}
+
+QLineEdit:read-only {
+    background-color: #F5F1E8;
+    color: #6E6A64;
+}
+
+/* Botones generales */
+QPushButton {
+    background-color: #1E4D3B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #163A2C;
+}
+
+QPushButton:pressed {
+    background-color: #102B20;
+}
+
+QPushButton:disabled {
+    background-color: #D5CFC2;
+    color: #8C867B;
+}
+
+/* Botones secundarios y de eliminar */
+QPushButton#btnLimpiarBusqueda,
+QPushButton#btnCancelar {
+    background-color: #EFEAE0;
+    color: #2C2A29;
+    border: 1px solid #D5CFC2;
+}
+
+QPushButton#btnLimpiarBusqueda:hover,
+QPushButton#btnCancelar:hover {
+    background-color: #E2DACB;
+}
+
+QPushButton#btnEliminarLibro {
+    background-color: #9E2A2B;
+    color: #FFFFFF;
+}
+
+QPushButton#btnEliminarLibro:hover {
+    background-color: #7D2021;
+}
+
+QWidget#celdaBotonTabla {
+    background-color: transparent;
+}
+
+QPushButton#btnVerSinopsis {
+    background-color: #1E4D3B;
+    color: #FFFFFF;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+QPushButton#btnVerSinopsis:hover {
+    background-color: #163A2C;
+}
+
+/* Tablas */
+QTableWidget {
+    background-color: #FFFFFF;
+    alternate-background-color: #FAF8F3;
+    color: #2C2A29;
+    border: 1px solid #E2DACB;
+    border-radius: 6px;
+    gridline-color: #EFEAE0;
+    selection-background-color: #1E4D3B;
+    selection-color: #FFFFFF;
+}
+
+QHeaderView::section {
+    background-color: #1E4D3B;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    border-right: 1px solid #163A2C;
+}
+
+/* Menú lateral izquierdo */
+QFrame#menuLateral {
+    background-color: #1E4D3B;
+    border: none;
+}
+
+QFrame#menuLateral QLabel {
+    background-color: transparent;
+    color: #F5F1E8;
+}
+
+QLabel#lblTituloMenu {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+QLabel#lblUsuarioSesion {
+    font-size: 12px;
+    color: #E2DACB;
+}
+
+QFrame#menuLateral QPushButton {
+    background-color: transparent;
+    color: #F5F1E8;
+    text-align: left;
+    padding: 11px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+QFrame#menuLateral QPushButton:hover,
+QFrame#menuLateral QPushButton:checked {
+    background-color: #163A2C;
+    color: #FFFFFF;
+}
+
+QFrame#menuLateral QPushButton:disabled {
+    color: #7A9A8B;
+    background-color: transparent;
+}
+
+QFrame#menuLateral QPushButton#btnCerrarSesion {
+    border: 1px solid #3A6B56;
+    text-align: center;
+}
+
+QFrame#menuLateral QPushButton#btnCerrarSesion:hover {
+    background-color: #163A2C;
+}
+
+/* Cuadros de diálogo */
+QMessageBox,
+QDialog {
+    background-color: #F5F1E8;
+}
+
+QMessageBox QLabel {
+    color: #2C2A29;
+    background-color: transparent;
+}

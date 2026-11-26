@@ -448,7 +448,7 @@ BEGIN
         SET stock=stock+1
         where id=v_id_existente;
         
-        SET p_id_generado = p_id_existente;
+        SET p_id_generado = v_id_existente;
 	END IF;
     
 	COMMIT;
