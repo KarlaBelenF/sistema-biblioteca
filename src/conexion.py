@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv() # Carga las variables de entorno desde .env en el directorio actual
 
-def obtener_conexion(rol="lector", id_usuario=None):  
+def obtener_conexion(rol="lector", id_usuario=None): 
     credenciales = {  # Obtiene las credenciales desde las variables de entorno
         "administrador": (os.getenv("DB_ADMIN_USER"), os.getenv("DB_ADMIN_PASS")),
         "empleado": (os.getenv("DB_EMPLEADO_USER"), os.getenv("DB_EMPLEADO_PASS")),
